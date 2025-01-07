@@ -1,39 +1,61 @@
 // Timestamp: 2025-01-01 00:00:00
-mod models;
 mod views;
 mod controllers;
 
-use std::error::Error;
+use views::cli::list_backups;
+use controllers::{backup::{create_backup, compress_backup}, restore::restore_backup};
 
-use clap::{App, Arg};
+use std::io::Result;
+use tokio::runtime::Runtime;
+use clap::{Parser,Subcommand};
 
-#[tokio::main]
-async fn main() -> Result<(), Box<dyn Error>> {
-    let matches = App::new("Database Backup Utility")
-        .version("1.0")
-        .author("Eduardo Cristea")
-        .about("Backup and restore databases")
-        .subcommand(App::new("backup")
-            .about("Create a Backup of a database")
-            .arg(Arg::new("db").required(true).about("Database type"))
-            .arg(Arg::new("host").about("Database host").takes_value(true))
-            .arg(Arg::new("user").required(true).about("Database User").takes_value(true))
-            .arg(Arg::new("password").required(true).about("Database Password").takes_value(true))
-            .arg(Arg::new("dbname").required(true).about("Database Name").takes_value(true))
-        )
-        .subcommand(App::new("restore")
-            .about("Restore a Backup of a database")
-            .arg(Arg::new("file").required(true).about("Backup file")))
-        .get_matches();
+#[derive(Parser)]
+#[command(name = "Database Backup Utility")]
+#[command(version = "0.1.0")]
+#[command(about = "Backup and restore databases", long_about = None)]
+struct Cli {
+    #[command(subcommand)]
+    command: Commands,
+}
+#[derive(Subcommand)]
+enum Commands {
+    // It creates a Backup File
+    Create {
+        #[arg(short, long)]
+        db_type: String, // "mysql", "postgres", "sqlite"
+        #[arg(short, long)]
+        uri: String, // URI de conexión
+        #[arg(short, long)]
+        output: String, // Archivo de destino
+    },
+    // It list all the Backup Files
+    List,
+    // It restores the database
+    Restore,
+    // It comprime a backupt file
+    Compress,
+}
 
-    if let Some(subcommand) = matches.subcommand_name(){
-        match subcommand {
-            "backup" => controllers::backup::handle(matches).await?,
-            "restore" => controllers::restore::handle(matches).await?,
-            _ => {
-                views::cli::print_error("Unknown command");
-                return Err("Unknown command".into());
-            }
+fn main() -> Result<()> {
+    
+    let cli = Cli::parse();
+
+    match cli.command {
+        Commands::Create { db_type, uri, output } => {
+            let rt: Runtime = Runtime::new().unwrap();
+            rt.block_on(create_backup(&db_type, &uri, &output)).unwrap();
+        }
+        Commands::List => {
+            let rt: Runtime = Runtime::new().unwrap();
+            rt.block_on(list_backups()).unwrap();
+        }
+        Commands::Restore => {
+            let rt: Runtime = Runtime::new().unwrap();
+            rt.block_on(restore_backup()).unwrap();
+        }
+        Commands::Compress => {
+            let rt: Runtime = Runtime::new().unwrap();
+            rt.block_on(compress_backup()).unwrap();
         }
     }
 

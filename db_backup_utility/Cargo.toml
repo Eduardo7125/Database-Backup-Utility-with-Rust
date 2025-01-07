@@ -4,13 +4,8 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+clap = { version = "4.0", features = ["derive"] }
 tokio = { version = "1.0", features = ["full"] }
-clap = "4.0"
-serde = { version = "1.0", features = ["derive"] }
-tokio-postgres = "0.7"
-mysql_async = "0.28"
-mongodb = { version = "2.0", features = ["tokio-runtime"] }
-flate2 = "1.0"
-aws-sdk-s3 = "0.0.26-alpha"
-log = "0.4"
-tracing = "0.1"
+dialoguer = "0.10"  # Para los menús interactivos
+serde = { version = "1.0", features = ["derive"] }  # Para serializar/deserializar datos
+sqlx = { version = "0.7", features = ["runtime-tokio-native-tls", "postgres", "mysql", "sqlite"] }

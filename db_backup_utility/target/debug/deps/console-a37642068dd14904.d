@@ -1,0 +1,11 @@
+C:\Users\eduar\OneDrive\Documentos\GitHub\Database-Backup-Utility-with-Rust\db_backup_utility\target\debug\deps\libconsole-a37642068dd14904.rmeta: C:\Users\eduar\.cargo\registry\src\index.crates.io-6f17d22bba15001f\console-0.15.10\src/lib.rs C:\Users\eduar\.cargo\registry\src\index.crates.io-6f17d22bba15001f\console-0.15.10\src\common_term.rs C:\Users\eduar\.cargo\registry\src\index.crates.io-6f17d22bba15001f\console-0.15.10\src\kb.rs C:\Users\eduar\.cargo\registry\src\index.crates.io-6f17d22bba15001f\console-0.15.10\src\term.rs C:\Users\eduar\.cargo\registry\src\index.crates.io-6f17d22bba15001f\console-0.15.10\src\utils.rs C:\Users\eduar\.cargo\registry\src\index.crates.io-6f17d22bba15001f\console-0.15.10\src\windows_term\mod.rs C:\Users\eduar\.cargo\registry\src\index.crates.io-6f17d22bba15001f\console-0.15.10\src\ansi.rs
+
+C:\Users\eduar\OneDrive\Documentos\GitHub\Database-Backup-Utility-with-Rust\db_backup_utility\target\debug\deps\console-a37642068dd14904.d: C:\Users\eduar\.cargo\registry\src\index.crates.io-6f17d22bba15001f\console-0.15.10\src/lib.rs C:\Users\eduar\.cargo\registry\src\index.crates.io-6f17d22bba15001f\console-0.15.10\src\common_term.rs C:\Users\eduar\.cargo\registry\src\index.crates.io-6f17d22bba15001f\console-0.15.10\src\kb.rs C:\Users\eduar\.cargo\registry\src\index.crates.io-6f17d22bba15001f\console-0.15.10\src\term.rs C:\Users\eduar\.cargo\registry\src\index.crates.io-6f17d22bba15001f\console-0.15.10\src\utils.rs C:\Users\eduar\.cargo\registry\src\index.crates.io-6f17d22bba15001f\console-0.15.10\src\windows_term\mod.rs C:\Users\eduar\.cargo\registry\src\index.crates.io-6f17d22bba15001f\console-0.15.10\src\ansi.rs
+
+C:\Users\eduar\.cargo\registry\src\index.crates.io-6f17d22bba15001f\console-0.15.10\src/lib.rs:
+C:\Users\eduar\.cargo\registry\src\index.crates.io-6f17d22bba15001f\console-0.15.10\src\common_term.rs:
+C:\Users\eduar\.cargo\registry\src\index.crates.io-6f17d22bba15001f\console-0.15.10\src\kb.rs:
+C:\Users\eduar\.cargo\registry\src\index.crates.io-6f17d22bba15001f\console-0.15.10\src\term.rs:
+C:\Users\eduar\.cargo\registry\src\index.crates.io-6f17d22bba15001f\console-0.15.10\src\utils.rs:
+C:\Users\eduar\.cargo\registry\src\index.crates.io-6f17d22bba15001f\console-0.15.10\src\windows_term\mod.rs:
+C:\Users\eduar\.cargo\registry\src\index.crates.io-6f17d22bba15001f\console-0.15.10\src\ansi.rs:
